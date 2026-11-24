@@ -1,0 +1,9 @@
+#!/bin/bash
+
+INSTALL_DIR="protocols/ros2/install"
+if [[ -f "$INSTALL_DIR/local_setup.sh" ]]; then
+  source "$INSTALL_DIR/local_setup.sh"
+else
+  echo "⚠️ ：未找到 $INSTALL_DIR/local_setup.sh，已跳过 ROS2 环境加载"
+fi
+
