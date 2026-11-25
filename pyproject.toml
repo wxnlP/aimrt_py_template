@@ -2,4 +2,4 @@
 line-length = 100
 extend-exclude = ["build", "install", "log"]
 
-lint.extend-select = ["I"]
+lint.select = ["F", "I"]
