@@ -37,23 +37,18 @@ class AimRTPyModule(aimrt.ModuleBase):
         return True
 
     def Start(self) -> bool:
-        try:
-            self.running = True
-            self.work_executor.ExecuteAfter(datetime.timedelta(milliseconds=200), self.main_loop)
-            
-            aimrt.info(self.logger, "AimRTPyModule start success.")
-        except Exception as e:
-            aimrt.error(self.logger, f"Error in Start: {e}")
+        self.running = True
+        self.work_executor.ExecuteAfter(datetime.timedelta(milliseconds=200), self.main_loop)
+        
+        aimrt.info(self.logger, "AimRTPyModule start success.")
+
         return True
 
     def Shutdown(self):
-        try:
-            self.running = False
-            self.stop_sig.wait()
+        self.running = False
+        self.stop_sig.wait()
 
-            aimrt.info(self.logger, "AimRTPyModule shutdown success.")
-        except Exception as e:
-            aimrt.error(self.logger, f"Error in Shutdown: {e}")
+        aimrt.info(self.logger, "AimRTPyModule shutdown success.")
 
     def main_loop(self):
         count = 0    
