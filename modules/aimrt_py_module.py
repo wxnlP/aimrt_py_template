@@ -1,9 +1,9 @@
-import aimrt_py as aimrt
-import yaml
-
-import time
 import datetime
 import threading
+import time
+
+import aimrt_py as aimrt
+import yaml
 
 
 class AimRTPyModule(aimrt.ModuleBase):
